@@ -1,5 +1,5 @@
-const log = console.log.bind(console); // might need a different definition in JSC
-const time = Date.now.bind(Date); // might need a different definition in JSC
+const log = (window && window.log) || console.log.bind(console); // might need a different definition in JSC
+const time = (window && window.time) || Date.now.bind(Date); // might need a different definition in JSC
 const autoRun = (typeof window === "undefined"); // if true, auto-runs after loading; or you can call runTest()
 
 ////////////////////////////////////////////
